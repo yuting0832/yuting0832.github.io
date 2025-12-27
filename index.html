@@ -9,11 +9,10 @@
       --primary-color: #2E8B57;
       --accent-color: #e74c3c;
       --bg-color: #f8f9fa;
-      /* 標籤顏色 */
-      --tag-spin: #f39c12;   /* 旋轉 - 橘色 */
-      --tag-control: #3498db; /* 控制 - 藍色 */
-      --tag-comfort: #27ae60; /* 舒適 - 綠色 */
-      --tag-power: #9b59b6;   /* 力量 - 紫色 */
+      --tag-spin: #f39c12;
+      --tag-control: #3498db;
+      --tag-comfort: #27ae60;
+      --tag-power: #9b59b6;
     }
     
     body { font-family: "Microsoft JhengHei", sans-serif; margin: 0; background: var(--bg-color); color: #333; }
@@ -22,26 +21,18 @@
 
     .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; display: flex; flex-wrap: wrap; justify-content: center; }
 
+    /* 線材卡片 */
     .product { 
       background: white; width: 220px; margin: 15px; padding: 15px; 
       border-radius: 12px; transition: transform 0.3s; 
       box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;
-      position: relative; /* 讓標籤定位參考 */
+      cursor: pointer; /* 讓鼠標變手型，提示可點擊 */
     }
     
-    .product:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+    .product:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); border: 1px solid var(--primary-color); }
     .product img { width: 100%; height: 160px; object-fit: contain; border-radius: 8px; }
 
-    /* 標籤樣式 */
-    .badge {
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      color: white;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; color: white; margin-bottom: 8px; font-weight: bold; }
     .spin { background-color: var(--tag-spin); }
     .control { background-color: var(--tag-control); }
     .comfort { background-color: var(--tag-comfort); }
@@ -51,6 +42,21 @@
     .price { color: var(--accent-color); font-size: 1.2rem; font-weight: bold; margin-top: 10px; }
     .price::before { content: "NT$ "; font-size: 0.8rem; }
 
+    /* 彈窗樣式 (Modal) */
+    .modal {
+      display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+      width: 100%; height: 100%; background-color: rgba(0,0,0,0.7);
+      align-items: center; justify-content: center;
+    }
+    .modal-content {
+      background-color: white; padding: 30px; border-radius: 15px;
+      max-width: 500px; width: 90%; position: relative; line-height: 1.6;
+    }
+    .close-btn { position: absolute; right: 20px; top: 15px; font-size: 24px; cursor: pointer; color: #888; }
+    .modal-title { color: var(--primary-color); border-bottom: 2px solid #eee; padding-bottom: 10px; }
+    .modal-desc { margin-top: 15px; color: #555; }
+
+    .contact-info { text-align: center; padding: 40px; background: white; margin-top: 40px; }
     footer { text-align: center; padding: 30px; color: #888; }
   </style>
 </head>
@@ -62,88 +68,65 @@
 </header>
 
 <div class="container">
-  
-  <div class="product">
+  <div class="product" onclick="showDetail('Solinco Hyper-G', '這款線以其招牌的鮮綠色聞名。四方形稜角設計提供了極佳的咬球感，是目前市場上「極致旋轉」的代表作，適合喜歡強力上旋且追求落點精準的球友。')">
     <div class="badge spin">極致旋轉</div>
     <img src="hg.jpg" alt="Solinco Hyper-G">
     <h3>Solinco Hyper-G</h3>
     <p class="price">450</p>
   </div>
 
-  <div class="product">
+  <div class="product" onclick="showDetail('Babolat RPM Blast', 'Nadal 御用線材。八角形斷面加上特殊塗層，摩擦力極大，彈性回饋強。適合爆發力強、追求擊球沈重感的選手。')">
     <div class="badge power">強力擊球旋轉</div>
     <img src="rpmb.jpg" alt="Babolat RPM Blast">
     <h3>Babolat RPM Blast</h3>
     <p class="price">600</p>
   </div>
 
-  <div class="product">
+  <div class="product" onclick="showDetail('Yonex Poly Tour Pro', '這是一條非常平衡的聚酯線。雖然是硬線但觸感偏柔和，控制力極佳，是許多巡迴賽職業選手（如 Kyrgios）的選擇。')">
     <div class="badge control">精準控制</div>
     <img src="yptp.jpg" alt="Yonex Poly Tour Pro">
     <h3>Yonex Poly Tour Pro</h3>
     <p class="price">400</p>
   </div>
-
-  <div class="product">
-    <div class="badge spin">控制/旋轉</div>
-    <img src="hlt.jpg" alt="Head Lynx Tour">
-    <h3>Head Lynx Tour</h3>
-    <p class="price">480</p>
-  </div>
-
-  <div class="product">
-    <div class="badge control">全方位/控制</div>
-    <img src="conf.jpg" alt="Solinco Confidential">
-    <h3>Solinco Confidential</h3>
-    <p class="price">480</p>
-  </div>
-
-  <div class="product">
-    <div class="badge power">Federer首選</div>
-    <img src="ap.jpg" alt="LXL Alu POWER">
-    <h3>Luxilon Alu Power</h3>
-    <p class="price">650</p>
-  </div>
-
-  <div class="product">
-    <div class="badge power">彈性好加粗糙面</div>
-    <img src="apr.jpg" alt="LXL Alu POWER Rough">
-    <h3>Luxilon Alu Power Rough</h3>
-    <p class="price">650</p>
-  </div>
-
-   <div class="product">
-    <div class="badge power">擊球感重</div>
-    <img src="yptsg.jpg" alt="Yonex Poly Tour Spin G">
-    <h3>Yonex Poly Tour Spin G</h3>
-    <p class="price">480</p>
-  </div>
-
-   <div class="product">
-    <div class="badge spin">強旋 平民首選</div>
-    <img src="ypts.jpg" alt="Yonex Poly Tour Spin">
-    <h3>Yonex Poly Tour Spin</h3>
-    <p class="price">480</p>
-  </div>
-
-  <div class="product">
-    <div class="badge comfort">舒適仿羊腸</div>
-    <img src="xcel.jpg" alt="Babolat XCEL">
-    <h3>Babolat XCEL (軟線)</h3>
-    <p class="price">600</p>
-  </div>
   
+  </div>
 
+<div id="detailModal" class="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2 id="modalTitle" class="modal-title"></h2>
+    <div id="modalDesc" class="modal-desc"></div>
+    <p style="margin-top: 20px; font-weight: bold; color: var(--accent-color);">預約請聯繫下方 LINE</p>
+  </div>
 </div>
 
- <section class="contact-info">
-    <h2>聯絡 KEN 穿線</h2>
-    <p>LINE: 0910323450 | 電話: 0910323450</p>
-  </section>
+<section class="contact-info">
+  <h2>聯絡 KEN 穿線</h2>
+  <p>LINE: 0910323450 | 電話: 0910323450</p>
+</section>
   
 <footer>
   © 2025 Kenny's Tennis Shop | 林口專業穿線服務
 </footer>
+
+<script>
+  function showDetail(name, description) {
+    document.getElementById('modalTitle').innerText = name;
+    document.getElementById('modalDesc').innerText = description;
+    document.getElementById('detailModal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('detailModal').style.display = 'none';
+  }
+
+  // 按下 Esc 鍵也可關閉彈窗
+  window.onkeydown = function(event) {
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  };
+</script>
 
 </body>
 </html>
