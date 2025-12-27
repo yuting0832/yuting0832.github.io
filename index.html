@@ -19,6 +19,22 @@
     header { background: white; padding: 2rem 1rem; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
     h1 { margin: 0; color: var(--primary-color); letter-spacing: 2px; }
 
+    .section-title {
+      text-align: center;
+      color: var(--primary-color);
+      margin: 50px 0 20px 0;
+      font-size: 1.8rem;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--primary-color);
+      margin: 10px auto;
+    }
+
     .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; display: flex; flex-wrap: wrap; justify-content: center; }
 
     /* 線材卡片 */
@@ -66,6 +82,10 @@
   <h1>KEN 專業網羽球穿線</h1>
   <p>#林口穿線 #專業電子穿線機</p>
 </header>
+  <h2 class="section-title">本店提供的線材</h2>
+<p style="text-align: center; color: #e74c3c; font-weight: bold; margin-bottom: 30px;">
+  💡 以下線材售價均已包含專業穿線工資
+</p>
 
 <div class="container">
   <div class="product" onclick="showDetail('Solinco Hyper-G', '<b>【線徑規格】</b><br>1.25mm<br><br><b>這款線以其招牌的鮮綠色聞名。四方形稜角設計提供了極佳的咬球感，是目前市場上「極致旋轉」的代表作，適合喜歡強力上旋且追求落點精準的球友。')">
