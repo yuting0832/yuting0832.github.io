@@ -21,25 +21,42 @@
       --tag-badminton: #e67e22;
     }
     
-    body { font-family: "Microsoft JhengHei", sans-serif; margin: 0; background: var(--bg-color); color: #333; scroll-behavior: smooth; }
+   body { 
+      font-family: "Microsoft JhengHei", sans-serif; 
+      margin: 0; 
+      background: var(--bg-color); 
+      color: #333; 
+      scroll-behavior: smooth; /* 讓點擊按鈕後平滑捲動 */
+    }
     
- /* Header 區域 */
+    /* --- 頂部 Header 設計升級 --- */
     header { 
       background: white;
-      padding: 60px 20px 30px 20px; 
+      padding: 60px 20px 40px 20px; 
       text-align: center; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     }
-    header h1 { margin: 0; color: var(--primary-color); font-size: 2.5rem; letter-spacing: 2px; font-weight: 900; }
-    
-    .header-tags { margin-top: 20px; font-weight: bold; color: var(--text-light); font-size: 1.1rem; }
-    .header-tags span { margin: 0 12px; }
+    header h1 { 
+      margin: 0; 
+      color: var(--primary-color); 
+      font-size: 2.8rem; 
+      letter-spacing: 3px; 
+      font-weight: 900; 
+    }
+    .header-tags { 
+      margin-top: 15px; 
+      font-weight: bold; 
+      color: #777; 
+      font-size: 1.1rem; 
+    }
+    .header-tags span { margin: 0 10px; }
 
-    /* 全局通用的分割飾線樣式 */
+    /* 200px 裝飾分割線 */
     .title-divider {
       width: 200px;
       height: 4px;
       background: var(--primary-color);
-      margin: 20px auto 40px auto;
+      margin: 25px auto;
       border-radius: 2px;
     }
     /* 導航按鈕：綠框白底 */
@@ -109,7 +126,7 @@
 
   /* 聯絡資訊區塊 - 這裡就是跳轉的目標 */
     .contact-info { text-align: center; padding: 100px 20px; background: #fff; }
-    .line-btn { background:#00B900; color:white; padding: 16px 45px; border-radius: 50px; text-decoration:none; font-weight:bold; display:inline-block; font-size: 1.2rem; }
+    
     footer { text-align: center; padding: 30px; color: #888; background: #eee; }
   </style>
 </head>
@@ -230,11 +247,11 @@
   </div>
 </section>
 
-<section class="contact-info">
+<section id="contact-section" class="contact-info">
   <h2>聯絡 KEN 預約穿線</h2>
   <p>📍 地址：新北市林口區（請私訊預約詳細地點）</p>
   <p>LINE: <strong>0910323450</strong> | 電話: 0910323450</p>
-  <a href="https://line.me/ti/p/~0910323450" target="_blank" style="background:#00B900; color:white; padding:12px 30px; border-radius:50px; text-decoration:none; font-weight:bold; display:inline-block; margin-top:15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">💬 立即加 LINE 預約</a>
+ 
 </section>
 
 <div id="detailModal" class="modal" onclick="closeModal()">
