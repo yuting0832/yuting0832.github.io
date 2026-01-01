@@ -3,333 +3,241 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="KEN專業網羽球穿線工作室位於林口，使用頂級 Wilson Baiardo 穿線機，提供 Solinco、Babolat、Yonex 等多款專業線材。網羽球急件穿線服務，專業電子穿線技術。">
-  <meta name="keywords" content="林口穿線, 網球穿線, 羽球穿線, Wilson Baiardo, 林口網球, 網球線推薦">
+  <meta name="description" content="KEN專業網羽球穿線工作室位於林口，使用頂級 Wilson Baiardo 穿線機，提供專業網羽球穿線技術。">
   <title>KEN 專業網羽球穿線 | 林口頂級 Wilson Baiardo 電子穿線服務</title>
   <style>
     :root {
-      --primary-color: #2E8B57;
+      --primary-color: #2E8B57; /* 森林綠 */
+      --dark-green: #1e5a38;
       --accent-color: #e74c3c;
-      --bg-color: #f8f9fa;
+      --bg-color: #f4f7f6;
       --tag-spin: #f39c12;
       --tag-control: #3498db;
       --tag-comfort: #27ae60;
       --tag-power: #9b59b6;
-      --tag-badminton: #e67e22; /* 羽球橘 */
+      --tag-badminton: #e67e22;
     }
     
-    body { font-family: "Microsoft JhengHei", sans-serif; margin: 0; background: var(--bg-color); color: #333; }
-    header { background: white; padding: 2rem 1rem; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-    h1 { margin: 0; color: var(--primary-color); letter-spacing: 2px; }
-
-    .section-title {
-      text-align: center;
-      color: var(--primary-color);
-      margin: 50px 0 20px 0;
-      font-size: 1.8rem;
-      position: relative;
+    body { font-family: "Microsoft JhengHei", sans-serif; margin: 0; background: var(--bg-color); color: #333; scroll-behavior: smooth; }
+    
+    /* 頂部顏色優化：加入深色漸層 */
+    header { 
+      background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-color) 100%); 
+      padding: 3rem 1rem; 
+      text-align: center; 
+      color: white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
     }
-    .section-title::after {
-      content: "";
-      display: block;
-      width: 50px;
-      height: 3px;
-      background: var(--primary-color);
-      margin: 10px auto;
-    }
+    header h1 { margin: 0; letter-spacing: 3px; font-size: 2.2rem; }
+    header p { opacity: 0.9; margin-top: 10px; }
 
-
-    /* 分類跳轉按鈕 */
-    .nav-buttons { margin-top: 20px; }
+    /* 導航按鈕樣式調整 */
+    .nav-buttons { margin-top: 25px; }
     .nav-btn {
-      display: inline-block; padding: 8px 20px; margin: 5px;
-      border: 2px solid var(--primary-color); border-radius: 25px;
-      text-decoration: none; color: var(--primary-color); font-weight: bold;
+      display: inline-block; padding: 10px 22px; margin: 5px;
+      border: 2px solid rgba(255,255,255,0.8); border-radius: 25px;
+      text-decoration: none; color: white; font-weight: bold;
       transition: all 0.3s;
     }
-    .nav-btn:hover { background: var(--primary-color); color: white; }
+    .nav-btn:hover { background: white; color: var(--primary-color); border-color: white; }
 
-    .section-title {
-      text-align: center; color: var(--primary-color);
-      margin: 60px 0 20px 0; font-size: 2rem; position: relative;
-    }
-    .section-title::after {
-      content: ""; display: block; width: 60px; height: 4px;
-      background: var(--primary-color); margin: 10px auto;
-    }
+    .section-title { text-align: center; color: var(--primary-color); margin: 60px 0 20px 0; font-size: 2rem; position: relative; }
+    .section-title::after { content: ""; display: block; width: 60px; height: 4px; background: var(--primary-color); margin: 10px auto; }
 
-    .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; display: flex; flex-wrap: wrap; justify-content: center;align-items: flex-start; }
+    .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; }
 
     /* 線材卡片 */
     .product { 
-      background: white; width: 220px; margin: 15px; padding: 15px; 
-      border-radius: 12px; transition: transform 0.3s; 
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;
-      cursor: pointer; /* 讓鼠標變手型，提示可點擊 */
+      background: white; width: 220px; margin: 15px; padding: 18px; 
+      border-radius: 12px; transition: transform 0.3s, box-shadow 0.3s; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; cursor: pointer;
     }
-    
-    .product:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); border: 1px solid var(--primary-color); }
-    .product img { width: 100%; height: 160px; object-fit: contain; border-radius: 8px; }
+    .product:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); border: 1px solid var(--primary-color); }
+    .product img { width: 100%; height: 160px; object-fit: contain; border-radius: 8px; margin-bottom: 12px; }
 
-    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; color: white; margin-bottom: 8px; font-weight: bold; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; color: white; margin-bottom: 8px; font-weight: bold; }
     .spin { background-color: var(--tag-spin); }
     .control { background-color: var(--tag-control); }
     .comfort { background-color: var(--tag-comfort); }
     .power { background-color: var(--tag-power); }
     .badminton-tag { background-color: var(--tag-badminton); }
-    .gauge { background-color: #95a5a6; } /* 專業的中性灰 */
-  
+    .gauge { background-color: #95a5a6; }
 
+    .price { color: var(--accent-color); font-size: 1.3rem; font-weight: bold; margin-top: 10px; }
+    .price::before { content: "NT$ "; font-size: 0.9rem; }
 
-    .product h3 { font-size: 1.05rem; margin: 5px 0; height: 2.5rem; }
-    .price { color: var(--accent-color); font-size: 1.2rem; font-weight: bold; margin-top: 10px; }
-    .price::before { content: "NT$ "; font-size: 0.8rem; }
-
-    /* 彈窗樣式 (Modal) */
-    .modal {
-      display: none; position: fixed; z-index: 1000; left: 0; top: 0;
-      width: 100%; height: 100%; background-color: rgba(0,0,0,0.7);
-      align-items: center; justify-content: center;
+    /* 穿線機區塊樣式 (置底用) */
+    .machine-section {
+      max-width: 1000px; margin: 60px auto; background: #fff;
+      padding: 40px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      display: flex; flex-wrap: wrap; align-items: center; gap: 40px;
+      border-left: 8px solid var(--primary-color);
     }
-    .modal-content {
-      background-color: white; padding: 30px; border-radius: 15px;
-      max-width: 500px; width: 90%; position: relative; line-height: 1.6;
-    }
+    .machine-image { flex: 1; min-width: 300px; text-align: center; }
+    .machine-image img { width: 100%; max-width: 380px; border-radius: 10px; }
+    .machine-content { flex: 1.5; min-width: 300px; }
+    .machine-content h2 { color: var(--primary-color); margin-top: 0; }
+    .feature-list { list-style: none; padding: 0; }
+    .feature-list li { margin-bottom: 12px; padding-left: 25px; position: relative; }
+    .feature-list li::before { content: "✔"; position: absolute; left: 0; color: var(--primary-color); font-weight: bold; }
+
+    /* 彈窗樣式 */
+    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); align-items: center; justify-content: center; }
+    .modal-content { background-color: white; padding: 30px; border-radius: 15px; max-width: 500px; width: 90%; position: relative; line-height: 1.6; }
     .close-btn { position: absolute; right: 20px; top: 15px; font-size: 24px; cursor: pointer; color: #888; }
-    .modal-title { color: var(--primary-color); border-bottom: 2px solid #eee; padding-bottom: 10px; }
-    .modal-desc { margin-top: 15px; color: #555; }
+    
+    /* 價目表 */
+    .price-table-section { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    .price-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    .price-table th, .price-table td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+    .price-table th { background-color: var(--primary-color); color: white; }
+    .price-tag { color: var(--accent-color); font-weight: bold; }
 
-    .contact-info { text-align: center; padding: 40px; background: white; margin-top: 40px; }
-    footer { text-align: center; padding: 30px; color: #888; }
+    .contact-info { text-align: center; padding: 60px 20px; background: white; margin-top: 60px; }
+    footer { text-align: center; padding: 30px; color: #888; background: #eee; }
   </style>
 </head>
 <body>
 
 <header>
   <h1>KEN 專業網羽球穿線</h1>
-  <p>#林口穿線 #專業電子穿線機 #穿線機使用Wilson Baiardo </p>
+  <p>#林口穿線 #頂級 Wilson Baiardo 電子穿線服務</p>
   <div class="nav-buttons">
     <a href="#tennis-section" class="nav-btn">網球線材</a>
     <a href="#badminton-section" class="nav-btn">羽球線材</a>
     <a href="#service-section" class="nav-btn">服務價目</a>
+    <a href="#machine-intro" class="nav-btn">頂級設備</a>
   </div>
 </header>
-  <h2 class="section-title">本店提供的線材</h2>
-<p style="text-align: center; color: #e74c3c; font-weight: bold; margin-bottom: 30px;">
+
+<p style="text-align: center; color: var(--accent-color); font-weight: bold; margin-top: 40px;">
   💡 以下線材售價均已包含專業穿線工資
 </p>
 
-<div class="container">
-  <div class="product" onclick="showDetail('Solinco Hyper-G', '<b>【線徑規格】</b><br>1.25mm<br><br><b>這款線以其招牌的鮮綠色聞名。四方形稜角設計提供了極佳的咬球感，是目前市場上「極致旋轉」的代表作，適合喜歡強力上旋且追求落點精準的球友。')">
-    <div class="badge spin">極致旋轉</div>
-    <div class="badge gauge">1.25mm</div>
-    <img src="hg.jpg" alt="Solinco Hyper-G">
-    <h3>Solinco Hyper-G</h3>
-    <p class="price">450</p>
+<section id="tennis-section">
+  <h2 class="section-title">專業網球線材</h2>
+  <div class="container">
+    <div class="product" onclick="showDetail('Solinco Hyper-G', '招牌鮮綠色，四方形稜角設計提供了極佳咬球感，極致旋轉代表。')">
+      <div class="badge spin">極致旋轉</div><div class="badge gauge">1.25mm</div>
+      <img src="hg.jpg"><h3>Solinco Hyper-G</h3><p class="price">450</p>
+    </div>
+    <div class="product" onclick="showDetail('Babolat RPM Blast', 'Nadal 御用線材。八角形斷面加上特殊塗層，彈性回饋強。')">
+      <div class="badge power">強力擊球旋轉</div><div class="badge gauge">1.25mm</div>
+      <img src="rpmb.jpg"><h3>Babolat RPM Blast</h3><p class="price">600</p>
+    </div>
+    <div class="product" onclick="showDetail('Head Lynx Tour', '多名球友使用，特色在於追求 高旋轉、優控制與耐用性的平衡表現。')">
+      <div class="badge spin">精準控制</div><div class="badge gauge">1.25mm</div>
+      <img src="hlt.jpg"><h3>Head Lynx Tour</h3><p class="price">500</p>
+    </div>
+    <div class="product" onclick="showDetail('Yonex Poly Tour Pro', '非常平衡的聚酯線。雖然是硬線但觸感偏柔和，控制力極佳。')">
+      <div class="badge comfort">柔順手感</div><div class="badge gauge">1.25mm</div>
+      <img src="yptp.jpg"><h3>Yonex Poly Tour Pro</h3><p class="price">500</p>
+    </div>
+    <div class="product" onclick="showDetail('Solinco Confidential', '提供足夠上旋而不失威力，穩定咬球的便宜好選擇。')">
+      <div class="badge spin">強力上旋</div><div class="badge gauge">1.25mm</div>
+      <img src="conf.jpg"><h3>Solinco Confidential</h3><p class="price">450</p>
+    </div>
+    <div class="product" onclick="showDetail('Luxilon Alu POWER', '經典費德勒御用線材，提供高彈力，同時獲得扎實擊球手感。')">
+      <div class="badge control">手感+控制</div><div class="badge gauge">1.25mm</div>
+      <img src="ap.jpg"><h3>Luxilon Alu POWER</h3><p class="price">650</p>
+    </div>
+    <div class="product" onclick="showDetail('Luxilon Alu POWER Rough', '粗糙線面增加摩擦時間，提供絕佳擊球反饋與控制。')">
+      <div class="badge control">精準控制</div><div class="badge gauge">1.25mm</div>
+      <img src="apr.jpg"><h3>Luxilon Alu POWER Rough</h3><p class="price">650</p>
+    </div>
+    <div class="product" onclick="showDetail('Yonex Poly Tour Spin', '五角形斷面設計，擁有極佳上旋能力與耐用度。')">
+      <div class="badge spin">強力上旋</div><div class="badge gauge">1.25mm</div>
+      <img src="ypts.jpg"><h3>Yonex Poly Tour Spin</h3><p class="price">500</p>
+    </div>
+    <div class="product" onclick="showDetail('Yonex Poly Tour Spin G', '注入矽油顆粒，強硬手感中帶有強大的控制與回彈。')">
+      <div class="badge control">精準控制</div><div class="badge gauge">1.25mm</div>
+      <img src="yptsg.jpg"><h3>Yonex Poly Tour Spin G</h3><p class="price">500</p>
+    </div>
+    <div class="product" onclick="showDetail('Babolat XCEL (軟線)', '仿羊腸線結構，極高舒適性，適合手肘敏感、追求細膩手感的球友。')">
+      <div class="badge comfort">完美手感</div><div class="badge gauge">1.3mm</div>
+      <img src="xcel.jpg"><h3>Babolat XCEL (軟線)</h3><p class="price">550</p>
+    </div>
   </div>
-
-  <div class="product" onclick="showDetail('Babolat RPM Blast', '<b>【線徑規格】</b><br>1.25mm<br><br><b>Nadal 御用線材。八角形斷面加上特殊塗層，摩擦力極大，彈性回饋強。適合爆發力強、追求擊球沈重感的選手。')">
-    <div class="badge power">強力擊球旋轉</div>
-    <div class="badge gauge">1.25mm</div>
-    <img src="rpmb.jpg" alt="Babolat RPM Blast">
-    <h3>Babolat RPM Blast</h3>
-    <p class="price">600</p>
-  </div>
-
-  <div class="product" onclick="showDetail('Head Lynx Tour', '<b>【線徑規格】</b><br>1.25mm<br><br><b>多名球友使用，特色在於追求 高旋轉、優控制與耐用性的平衡表現')">
-    <div class="badge spin">精準控制</div>
-    <div class="badge gauge">1.25mm</div>
-    <img src="hlt.jpg" alt="Head Lynx Tour">
-    <h3>Head Lynx Tour</h3>
-    <p class="price">500</p>
-  </div>
-
-  <div class="product" onclick="showDetail('Yonex Poly Tour Pro', '<b>【線徑規格】</b><br>1.25mm<br><br><b>這是一條非常平衡的聚酯線。雖然是硬線但觸感偏柔和，控制力極佳，是許多巡迴賽職業選手（如 Kyrgios）的選擇。')">
-    <div class="badge comfort">柔順手感</div>
-    <div class="badge gauge">1.25mm</div>
-    <img src="yptp.jpg" alt="Yonex Poly Tour Pro">
-    <h3>Yonex Poly Tour Pro</h3>
-    <p class="price">500</p>
-  </div>
-
-  <div class="product" onclick="showDetail('Solinco Confidential', '<b>【線徑規格】</b><br>1.25mm<br><br><b>提供足夠上旋而不失威力，便宜好選擇')">
-    <div class="badge spin">強力上旋</div>
-    <div class="badge gauge">1.25mm</div>
-    <img src="conf.jpg" alt="Solinco Confidential">
-    <h3>Solinco Confidential</h3>
-    <p class="price">450</p>
-  </div>
-
-  <div class="product" onclick="showDetail('LXL Alu POWER', '<b>【線徑規格】</b><br>1.25mm<br><br><b>費德勒御用線材，提供高彈力，同時獲得扎實手感')">
-    <div class="badge control">手感+控制</div>
-    <div class="badge gauge">1.25mm</div>
-    <img src="ap.jpg" alt="LXL Alu POWER">
-    <h3>Luxilon Alu POWER</h3>
-    <p class="price">650</p>
-  </div>
-
-  <div class="product" onclick="showDetail('LXL Alu POWER Rough', '<b>【線徑規格】</b><br>1.25mm<br><br><b>提供絕佳擊球反饋，線也提供粗糙面增加摩擦')">
-    <div class="badge control">精準控制</div>
-    <div class="badge gauge">1.25mm</div>
-    <img src="apr.jpg" alt="LXL Alu POWER Rough">
-    <h3>Luxilon Alu POWER Rough</h3>
-    <p class="price">650</p>
-  </div>
-
-  <div class="product" onclick="showDetail('Yonex Poly Tour Spin', '<b>【線徑規格】</b><br>1.25mm<br><br><b>擁有極佳上旋，有高耐用度')">
-    <div class="badge spin">強力上旋</div>
-    <div class="badge gauge">1.25mm</div>
-    <img src="ypts.jpg" alt="Yonex Poly Tour Spin">
-    <h3>Yonex Poly Tour Spin</h3>
-    <p class="price">500</p>
-  </div>
-
-  <div class="product" onclick="showDetail('Yonex Poly Tour Spin G', '<b>【線徑規格】</b><br>1.25mm<br><br><b>提供強硬手感，適合控制型球員，也獲得一定程度上旋')">
-    <div class="badge control">精準控制</div>
-    <div class="badge gauge">1.25mm</div>
-    <img src="yptsg.jpg" alt="Yonex Poly Tour Spin G">
-    <h3>Yonex Poly Tour Spin G</h3>
-    <p class="price">500</p>
-  </div>
-
-  <div class="product" onclick="showDetail('Babolat XCEL(軟線)', '<b>【線徑規格】</b><br>1.3mm<br><br><b>極高舒適性，提供細膩柔順手感')">
-    <div class="badge comfort">完美手感</div>
-    <div class="badge gauge">1.3mm</div>
-    <img src="xcel.jpg" alt="Babolat XCEL(軟線)">
-    <h3>Babolat XCEL(軟線)</h3>
-    <p class="price">550</p>
-  </div>
-  </section>
+</section>
 
 <section id="badminton-section">
   <h2 class="section-title">專業羽球線材</h2>
-  <p style="text-align: center; color: #e74c3c; font-weight: bold; margin-bottom: 30px;">💡 羽球亦使用頂級 Wilson Baiardo 專業穿線</p>
   <div class="container">
-    <div class="product" onclick="showDetail('Yonex BG-65', '<b>【線徑】</b>0.70mm<br><br>最受歡迎的耐用線，適合高斷線頻率球友，吸震力佳。')">
+    <div class="product" onclick="showDetail('Yonex BG-65', '最受歡迎的耐用線，適合追求CP值與耐用度的球友。')">
       <div class="badge badminton-tag">高耐用度</div><div class="badge gauge">0.70mm</div>
-      <img src="bg65.jpg" alt="BG-65"><h3>Yonex BG-65</h3><p class="price">300</p>
+      <img src="bg65.jpg"><h3>Yonex BG-65</h3><p class="price">300</p>
     </div>
-
-    <div class="product" onclick="showDetail('Yonex BG-80', '<b>【線徑】</b>0.68mm<br><br>硬感十足，彈性優異，是殺球型球員的最愛。')">
+    <div class="product" onclick="showDetail('Yonex BG-80', '硬感十足，彈性優異，是強力殺球型球員的首選。')">
       <div class="badge badminton-tag">強力攻擊</div><div class="badge gauge">0.68mm</div>
-      <img src="bg80.jpg" alt="BG-80"><h3>Yonex BG-80</h3><p class="price">350</p>
+      <img src="bg80.jpg"><h3>Yonex BG-80</h3><p class="price">350</p>
     </div>
-
-    <div class="product" onclick="showDetail('Yonex BG-66UM', '<b>【線徑】</b>0.65mm<br><br>極細線徑帶來頂級回彈感與清脆擊球音，職業選手首選。')">
+    <div class="product" onclick="showDetail('Yonex BG-66UM', '極細線徑帶來頂級回彈感，聲音清脆，職業選手愛用。')">
       <div class="badge badminton-tag">極致彈力</div><div class="badge gauge">0.65mm</div>
-      <img src="bg66um.jpg" alt="BG-66UM"><h3>Yonex BG-66 Ultimax</h3><p class="price">380</p>
-    </div>
-
-   
+      <img src="bg66um.jpg"><h3>Yonex BG-66 Ultimax</h3><p class="price">380</p>
     </div>
   </div>
 </section>
 
-
-    
-</div><style>
-  .price-table-section {
-    max-width: 800px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  }
-  .price-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  .price-table th, .price-table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-  }
-  .price-table th {
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 5px 5px 0 0;
-  }
-  .price-tag {
-    color: var(--accent-color);
-    font-weight: bold;
-  }
-</style>
-
-<section class="price-table-section" style="clear: both; margin-top: 60px;">
-  <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 10px;">穿線工資與服務</h2>
-  
-  <p style="text-align: center; color: #e74c3c; font-weight: bold; margin-bottom: 20px;">
-    💡 店內選購線材，售價均已包含專業電腦穿線工資；自備線請參考下方收費
+<section id="service-section" class="price-table-section">
+  <h2 style="text-align: center; color: var(--primary-color);">服務價目表</h2>
+  <p style="text-align: center; color: #555; margin-bottom: 20px;">
+    ※ 店內選購線材含工資；自備線收費如下
   </p>
-
   <table class="price-table">
     <thead>
-      <tr>
-        <th>項目</th>
-        <th>說明</th>
-        <th>費用</th>
-      </tr>
+      <tr><th>項目</th><th>說明</th><th>費用</th></tr>
     </thead>
     <tbody>
-      <tr>
-        <td><b>網球自備線</b></td>
-        <td>專業電腦穿線 (四結/兩結)</td>
-        <td class="price-tag">NT$ 250</td>
-      </tr>
-      <tr>
-        <td><b>羽球自備線</b></td>
-        <td>專業電腦穿線</td>
-        <td class="price-tag">NT$ 250</td>
-      </tr>
-      <tr>
-        <td><b>急件處理</b></td>
-        <td>2小時內取件 (需先預約)</td>
-        <td class="price-tag">+ NT$ 100</td>
-      </tr>
+      <tr><td><b>網球自備線</b></td><td>Wilson Baiardo 電腦穿線</td><td class="price-tag">NT$ 250</td></tr>
+      <tr><td><b>羽球自備線</b></td><td>Wilson Baiardo 電腦穿線</td><td class="price-tag">NT$ 250</td></tr>
+      <tr><td><b>急件服務</b></td><td>2小時取件 (需先預約)</td><td class="price-tag">+ NT$ 100</td></tr>
     </tbody>
   </table>
 </section>
-  
 
+<section id="machine-intro" class="machine-section">
+  <div class="machine-image">
+    <img src="baiardo.jpg" alt="Wilson Baiardo 穿線機">
+  </div>
+  <div class="machine-content">
+    <h2>世界級設備：Wilson Baiardo</h2>
+    <p>為了給球友最精準的穿線品質，我們引進了 <strong>Wilson Baiardo</strong> 電子穿線機。這台機器被譽為「穿線機中的勞斯萊斯」，也是美網、澳網等大滿貫賽事指定機台。</p>
+    <ul class="feature-list">
+      <li><strong>精準電子拉力：</strong>消除手動誤差，提供極穩定的張力。</li>
+      <li><strong>球拍保護技術：</strong>專利六點固定系統，穿線不傷框、不變形。</li>
+      <li><strong>頂級擊球回饋：</strong>專為專業球員設計，拉力傳導細膩。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="contact-info">
+  <h2>聯絡 KEN 預約穿線</h2>
+  <p>📍 地址：新北市林口區（請私訊預約詳細地點）</p>
+  <p>LINE: <strong>0910323450</strong> | 電話: 0910323450</p>
+  <a href="https://line.me/ti/p/~0910323450" target="_blank" style="background:#00B900; color:white; padding:12px 30px; border-radius:50px; text-decoration:none; font-weight:bold; display:inline-block; margin-top:15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">💬 立即加 LINE 預約</a>
+</section>
 
 <div id="detailModal" class="modal" onclick="closeModal()">
   <div class="modal-content" onclick="event.stopPropagation()">
     <span class="close-btn" onclick="closeModal()">&times;</span>
     <h2 id="modalTitle" class="modal-title"></h2>
     <div id="modalDesc" class="modal-desc"></div>
-    <p style="margin-top: 20px; font-weight: bold; color: var(--accent-color);">預約請聯繫下方 LINE</p>
   </div>
 </div>
 
-<section class="contact-info">
-  <h2>聯絡 KEN 穿線</h2>
-  <p>📍 地址：新北市林口區（請私訊預約詳細地址）</p>
-  <p>LINE: 0910323450 | 電話: 0910323450</p>
-</section>
-  
 <footer>
-  © 2025 Kenny's Tennis Shop | 林口專業穿線服務
+  © 2025 KEN's Workshop | 林口 Wilson Baiardo 專業電子穿線
 </footer>
 
 <script>
-  function showDetail(name, description) {
-    document.getElementById('modalTitle').innerText = name;
-    // 重點：將 innerText 改為 innerHTML 才能顯示換行與加粗
-    document.getElementById('modalDesc').innerHTML = description; 
+  function showDetail(n, d) {
+    document.getElementById('modalTitle').innerText = n;
+    document.getElementById('modalDesc').innerHTML = d; 
     document.getElementById('detailModal').style.display = 'flex';
   }
-
-  function closeModal() {
-    document.getElementById('detailModal').style.display = 'none';
-  }
-
-  window.onkeydown = function(event) {
-    if (event.key === "Escape") {
-      closeModal();
-    }
-  };
+  function closeModal() { document.getElementById('detailModal').style.display = 'none'; }
+  // 支援 ESC 鍵關閉
+  window.onkeydown = function(e) { if (e.key === "Escape") closeModal(); };
 </script>
 
 </body>
