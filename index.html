@@ -15,6 +15,7 @@
       --tag-control: #3498db;
       --tag-comfort: #27ae60;
       --tag-power: #9b59b6;
+      --tag-badminton: #e67e22; /* 羽球橘 */
     }
     
     body { font-family: "Microsoft JhengHei", sans-serif; margin: 0; background: var(--bg-color); color: #333; }
@@ -37,6 +38,26 @@
       margin: 10px auto;
     }
 
+
+    /* 分類跳轉按鈕 */
+    .nav-buttons { margin-top: 20px; }
+    .nav-btn {
+      display: inline-block; padding: 8px 20px; margin: 5px;
+      border: 2px solid var(--primary-color); border-radius: 25px;
+      text-decoration: none; color: var(--primary-color); font-weight: bold;
+      transition: all 0.3s;
+    }
+    .nav-btn:hover { background: var(--primary-color); color: white; }
+
+    .section-title {
+      text-align: center; color: var(--primary-color);
+      margin: 60px 0 20px 0; font-size: 2rem; position: relative;
+    }
+    .section-title::after {
+      content: ""; display: block; width: 60px; height: 4px;
+      background: var(--primary-color); margin: 10px auto;
+    }
+
     .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; display: flex; flex-wrap: wrap; justify-content: center;align-items: flex-start; }
 
     /* 線材卡片 */
@@ -55,7 +76,7 @@
     .control { background-color: var(--tag-control); }
     .comfort { background-color: var(--tag-comfort); }
     .power { background-color: var(--tag-power); }
-
+    .badminton-tag { background-color: var(--tag-badminton); }
     .gauge { background-color: #95a5a6; } /* 專業的中性灰 */
   
 
@@ -87,6 +108,11 @@
 <header>
   <h1>KEN 專業網羽球穿線</h1>
   <p>#林口穿線 #專業電子穿線機 #穿線機使用Wilson Baiardo </p>
+  <div class="nav-buttons">
+    <a href="#tennis-section" class="nav-btn">網球線材</a>
+    <a href="#badminton-section" class="nav-btn">羽球線材</a>
+    <a href="#service-section" class="nav-btn">服務價目</a>
+  </div>
 </header>
   <h2 class="section-title">本店提供的線材</h2>
 <p style="text-align: center; color: #e74c3c; font-weight: bold; margin-bottom: 30px;">
@@ -173,6 +199,31 @@
     <h3>Babolat XCEL(軟線)</h3>
     <p class="price">550</p>
   </div>
+  </section>
+
+<section id="badminton-section">
+  <h2 class="section-title">專業羽球線材</h2>
+  <p style="text-align: center; color: #e74c3c; font-weight: bold; margin-bottom: 30px;">💡 羽球亦使用頂級 Wilson Baiardo 專業穿線</p>
+  <div class="container">
+    <div class="product" onclick="showDetail('Yonex BG-65', '<b>【線徑】</b>0.70mm<br><br>最受歡迎的耐用線，適合高斷線頻率球友，吸震力佳。')">
+      <div class="badge badminton-tag">高耐用度</div><div class="badge gauge">0.70mm</div>
+      <img src="bg65.jpg" alt="BG-65"><h3>Yonex BG-65</h3><p class="price">300</p>
+    </div>
+
+    <div class="product" onclick="showDetail('Yonex BG-80', '<b>【線徑】</b>0.68mm<br><br>硬感十足，彈性優異，是殺球型球員的最愛。')">
+      <div class="badge badminton-tag">強力攻擊</div><div class="badge gauge">0.68mm</div>
+      <img src="bg80.jpg" alt="BG-80"><h3>Yonex BG-80</h3><p class="price">350</p>
+    </div>
+
+    <div class="product" onclick="showDetail('Yonex BG-66UM', '<b>【線徑】</b>0.65mm<br><br>極細線徑帶來頂級回彈感與清脆擊球音，職業選手首選。')">
+      <div class="badge badminton-tag">極致彈力</div><div class="badge gauge">0.65mm</div>
+      <img src="bg66um.jpg" alt="BG-66UM"><h3>Yonex BG-66 Ultimax</h3><p class="price">380</p>
+    </div>
+
+   
+    </div>
+  </div>
+</section>
 
 
     
@@ -254,6 +305,7 @@
 
 <section class="contact-info">
   <h2>聯絡 KEN 穿線</h2>
+  <p>📍 地址：新北市林口區（請私訊預約詳細地址）</p>
   <p>LINE: 0910323450 | 電話: 0910323450</p>
 </section>
   
