@@ -403,6 +403,13 @@
     </p>
   </div>
 </section>
+  <!-- 彈窗 HTML 結構 (必須補上此區塊，圖卡點擊功能才會正常) -->
+<div id="detailModal" class="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2 id="modalTitle" class="modal-title" style="color: var(--primary-color); margin-top: 0;"></h2>
+    <div id="modalDesc" class="modal-desc" style="color: #555; line-height: 1.6; margin-top: 15px;"></div>
+  </div>
 </div>
 
 <footer>
